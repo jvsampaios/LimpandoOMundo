@@ -3,20 +3,20 @@
     max-height: 100vh;
 }
 
-.container{
-    width: 100vw;
-    height: 100vh;
-}
 
 .corfundo {
     background: rgba(10,23,55,0.8);
 }
 
 #fundodomar {
-    position: relative;
     z-index: 0;
+    height: 80vh;
+    width: 100vw;
+}
 
-    
+#chat{
+    width: 100vw;
+    height: 20vh;
 }
 
 #cenario1 {
