@@ -1,15 +1,22 @@
 .img-responsive {
-    max-width: 100%;
-    height: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
 }
 
 .corfundo {
     background: rgba(10,23,55,0.8);
 }
 
-.fundodomar {
+#fundodomar {
     position: relative;
     z-index: 0;
+
+    
 }
 
 #cenario1 {
@@ -190,6 +197,8 @@
     top: 85%;
     left: 85%;
     cursor: pointer;
+    max-width: 5vw;
+    height: auto;
 }
 
 #texto1 {
@@ -292,6 +301,26 @@ p {
 
 .modal {
     text-align: center;
+}
+
+@media (max-width: 1000px) {
+    
+
+    .popup {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .cenario, #fundodomar{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /* Outros estilos específicos para dispositivos menores... */
 }
 
 
