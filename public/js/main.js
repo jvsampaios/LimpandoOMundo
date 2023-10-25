@@ -1,8 +1,10 @@
 
 
-function abrirCenario (inicial, cenario, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
+function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
      inicial.style.display = 'block';
      cenario.style.display = 'none';
+     chat.style.display = 'block';
+     chatog.style.display = 'none';
      icone1.style.display = 'none';
      icone2.style.display = 'none';
      icone3.style.display = 'none';
@@ -13,9 +15,11 @@ function abrirCenario (inicial, cenario, icone1, icone2, icone3, botao, credito,
      passar.style.display = 'none';
 }
 
-function fecharCenario (inicial, cenario, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
+function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
      inicial.style.display = 'none';
      cenario.style.display = 'block';
+     chat.style.display = 'none';
+     chatog.style.display = 'block';
      icone1.style.display = 'block';
      icone2.style.display = 'block';
      icone3.style.display = 'block';
