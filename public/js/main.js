@@ -40,11 +40,11 @@ $(document).ready(function() {
 
 //movimentção de elementos
 $(document).ready(function() {
-     $(".lixo").draggable({containment: "parent", revert: "invalid"});
+     $(".lixopapel").draggable({containment: "parent", revert: "invalid"});
  } );
 
  $(document).ready(function() {
-     $(".lixo2").draggable({containment: "parent", revert: "invalid"});
+     $(".lixoplastico").draggable({containment: "parent", revert: "invalid"});
  } );
 
  $(document).ready(function() {
@@ -55,9 +55,9 @@ $(document).ready(function() {
  $(function() {
      $("#lixeira1").droppable({
          hoverClass: 'active',
-         accept: '.lixo',
+         accept: '.lixopapel',
          drop: function(e, ui) {
-             $(".lixo").html(ui.draggable.remove());
+             $(".lixopapel").html(ui.draggable.remove());
              abrirModal();
          }
       });
@@ -66,10 +66,10 @@ $(document).ready(function() {
  $(function() {
      $("#lixeira2").droppable({
          hoverClass: 'active',
-         accept: '.lixo2',
+         accept: '.lixoplastico',
          drop: function(e, ui) {
-             $(".lixo2").html(ui.draggable.remove());
-             abrirModal2();
+             $(".lixoplastico").html(ui.draggable.remove());
+             abrirModal();
          }
       });
  } );
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
  function abrirModal () { 
      a++;
-     if (a == 5) {
+     if (a == 4) {
         $("#modalcidade").modal();
         $("#texto3").hide();
         $("#texto4").hide();
