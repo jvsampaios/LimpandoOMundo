@@ -60,41 +60,51 @@
                 <img src="images/skip.png" class="img-responsive botao" id="passar2" alt="Responsive image">
             </div>
         <!--Cenário Praia + Lixo -->
-            <div class="col-sm-12 col-xs-12 popup" id="cenario2"> 
-                    <img src="images/praia.png" class="img-responsive" id="praia" alt="Responsive image">
+        <div class="row" id="cenario2">
+            <div class="col-sm-12 col-xs-12 popup"> 
+                    <img src="images/beach.png" class="img-responsive" id="praia" alt="Responsive image">
                     <img src="images/lixo6.png" class="lixo2" id ="lixo6">
                     <img src="images/lixo7.png" class="lixo2" id ="lixo7">
                     <img src="images/lixo6.png" class="lixo2" id ="lixo8">
                     <img src="images/lixo7.png" class="lixo2" id ="lixo9">
                     <img src="images/lixo6.png" class="lixo2" id ="lixo10">
                     <img src="images/plastico.png" class="lixeira2" id ="lixeira2">
-                    <p id="texto5"> Agora estamos na praia! Um dos meus lugares favoritos… mas olha isso!  <br> </p>
-                    <p id="texto6"> Tá tudo sujo! </p>
-                    <p id="texto12">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
-                    <a href="javascript: fecharCenario (cenario2, fundodomar, iconecidade, iconepraia, iconemangue,  voltar2, botaocredito, texto9, texto10, passar);" > <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar2" alt="Responsive image"> </a>
-                    <img src="images/skip.png" class="img-responsive botao" id="passar3" alt="Responsive image">
+            </div>
+            </div>
+            <div class="row" id="chat2" style="display: none;">
+                <img src="images/chating.png" class="img-responsive" id="chat" alt="Responsive image"></p>
+                <p id="texto5"> Agora estamos na praia! Um dos meus lugares favoritos… mas olha isso!  <br> </p>
+                <p id="texto6"> Tá tudo sujo! </p>
+                <p id="texto12">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
+                <a href="javascript: fecharCenario (cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue,  voltar2, botaocredito, texto9, texto10, passar);" > <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar2" alt="Responsive image"> </a>
+                <img src="images/skip.png" class="img-responsive botao" id="passar3" alt="Responsive image">
             </div>
         <!--Cenário Mangue + Lixo -->
-            <div class="col-sm-12 col-xs-12 popup" id="cenario3"> 
-                <img src="images/mangue.png" class="img-responsive" id="mangue" alt="Responsive image">
-                <img src="images/lixo11.png" class="lixo3" id ="lixo11">
-                <img src="images/lixo12.png" class="lixo3" id ="lixo12">
-                <img src="images/lixo13.png" class="lixo3" id ="lixo13">
-                <img src="images/lixo11.png" class="lixo3" id ="lixo14">
-                <img src="images/lixo12.png" class="lixo3" id ="lixo15">
-                <img src="images/metal.png" class="lixeira3" id ="lixeira3">
+            <div class="row" id="cenario3">
+                <div class="col-sm-12 col-xs-12 popup"> 
+                    <img src="images/mangrove.png" class="img-responsive" id="mangue" alt="Responsive image">
+                    <img src="images/lixo11.png" class="lixo3" id ="lixo11">
+                    <img src="images/lixo12.png" class="lixo3" id ="lixo12">
+                    <img src="images/lixo13.png" class="lixo3" id ="lixo13">
+                    <img src="images/lixo11.png" class="lixo3" id ="lixo14">
+                    <img src="images/lixo12.png" class="lixo3" id ="lixo15">
+                    <img src="images/metal.png" class="lixeira3" id ="lixeira3">
+                </div>
+            </div>
+            <div class="row" id="chat3" style="display: none;">
+                <img src="images/chating.png" class="img-responsive" id="chat" alt="Responsive image"></p>
                 <p id="texto7"> Chegamos a minha casa! Bem-vindo ao manguezal.  <br> </p>
                 <p id="texto8">  É aqui que muitas espécies se reproduzem, como eu! </p>
                 <p id="texto13">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
-                <a href="javascript: fecharCenario (cenario3, fundodomar, iconecidade, iconepraia, iconemangue,  voltar3, botaocredito, texto9, texto10, passar);"> <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar3" alt="Responsive image"> </a>
+                <a href="javascript: fecharCenario (cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue,  voltar3, botaocredito, texto9, texto10, passar);"> <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar3" alt="Responsive image"> </a>
                 <img src="images/skip.png" class="img-responsive botao" id="passar4" alt="Responsive image">
             </div>
         </div>
         <!-- Ícones -->
         <div>
             <a href="javascript:abrirCenario(cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue, voltar1, botaocredito, texto1, texto2, passar);"><img src="images/bolhacidade.png" class="img-responsive" id="iconecidade" alt="Responsive image"></a>
-            <a href="javascript:abrirCenario(cenario2, fundodomar, iconecidade, iconepraia, iconemangue, voltar2, botaocredito, texto1, texto2, passar);"><img src="images/bolhapraia.png" class="img-responsive" id="iconepraia" alt="Responsive image"></a>
-            <a href="javascript:abrirCenario(cenario3, fundodomar, iconecidade, iconepraia, iconemangue, voltar3, botaocredito, texto1, texto2, passar);"><img src="images/bolhamangue.png" class="img-responsive" id="iconemangue" alt="Responsive image"></a>
+            <a href="javascript:abrirCenario(cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue, voltar2, botaocredito, texto1, texto2, passar);"><img src="images/bolhapraia.png" class="img-responsive" id="iconepraia" alt="Responsive image"></a>
+            <a href="javascript:abrirCenario(cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue, voltar3, botaocredito, texto1, texto2, passar);"><img src="images/bolhamangue.png" class="img-responsive" id="iconemangue" alt="Responsive image"></a>
         </div>
    </div>
    <!--Créditos -->
