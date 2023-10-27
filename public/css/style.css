@@ -303,25 +303,6 @@ p {
     text-align: center;
 }
 
-@media (max-width: 1000px) {
-    
-
-    .popup {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: auto;
-    }
-
-    .cenario, #fundodomar{
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    /* Outros estilos específicos para dispositivos menores... */
-}
 
 
 
