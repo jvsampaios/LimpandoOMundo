@@ -38,6 +38,8 @@ $(document).ready(function() {
      $("#texto13").hide();
 });
 
+// Fase 1
+
 //movimentção de elementos
 $(document).ready(function() {
      $(".lixopapel").draggable({containment: "parent", revert: "invalid"});
@@ -86,19 +88,23 @@ $(document).ready(function() {
  } );
 
  //apresentar insígnias 
- var a = 0
- var b = 0
+ var a = 0;
+ function abrirModal () { 
+    a++;
+    if (a == 4) {
+       $("#modalcidade").modal();
+       $("#texto3").hide();
+       $("#texto4").hide();
+       $("#texto11").show();
+    }
+}
+// Fim fase 1
+
+ //apresentar insígnias 
+ var b = 0;
  var c = 0;
 
- function abrirModal () { 
-     a++;
-     if (a == 4) {
-        $("#modalcidade").modal();
-        $("#texto3").hide();
-        $("#texto4").hide();
-        $("#texto11").show();
-     }
- }
+ 
 
  function abrirModal2 () { 
      b++;
@@ -212,3 +218,4 @@ $(document).ready(function() {
                  ' Você poderia me ajudar com isso?',
    ]         
    m = 0;    
+   
