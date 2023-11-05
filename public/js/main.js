@@ -105,7 +105,7 @@ $(document).ready(function() {
 
  function abrirModal2 () { 
      b++;
-     if (b == 5) {
+     if (b == 6) {
         $("#modalpraia").modal();
         $("#texto5").hide();
         $("#texto6").hide();
@@ -114,13 +114,12 @@ $(document).ready(function() {
  }
 
  function abrirModal3 () { 
-     c++;
-     if (c == 5) {
+     
         $("#modalmangue").modal();
         $("#texto7").hide();
         $("#texto8").hide();
         $("#texto13").show();
-     }
+     
  }
 
  //Passagem dos textos
@@ -251,8 +250,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
   resetBoard();
+  abrirModal2();
 }
 
 function unflipCards() {
@@ -263,7 +262,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 1000);
 }
 
 function resetBoard() {
@@ -327,6 +326,9 @@ function countdown() {
   interval = setInterval(() => {
     if (playTime < 0) {
       clearInterval(interval);
+      if (score >= 5) {
+        abrirModal3();
+      }
       return;
     }
 
@@ -353,5 +355,27 @@ start.addEventListener('click', startGame);
 moles.forEach(mole => mole.addEventListener('click', scorePoint));
 
 });
+
+// Função para verificar a orientação do dispositivo
+function checkOrientation() {
+  if (window.innerHeight > window.innerWidth) {
+    // O dispositivo está na orientação retrato (vertical)
+    $('#orientation-modal').modal('show');
+
+    // Defina um temporizador para fechar o modal após 3 segundos (ajuste conforme necessário)
+    setTimeout(function() {
+      $('#orientation-modal').modal('hide');
+    }, 300);
+  }
+}
+
+// Verifique a orientação inicialmente
+checkOrientation();
+
+// Verifique a orientação quando o tamanho da janela for alterado
+$(window).on('resize orientationchange', function() {
+  checkOrientation();
+});
+
 
 

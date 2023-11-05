@@ -288,14 +288,23 @@ p {
 
 .botaovoltar {
     position: absolute;
+    width: 40vh;
+    height: auto;
     top: 0;
     left: 80%;
     cursor: pointer;
     z-index: 2;
 }
 
+
 .insignia {
     position: center;
+}
+
+.deitado {
+  position: center;
+  width: 80vw;
+  height: 80vh;
 }
 
 .modal {
@@ -469,26 +478,25 @@ p {
     
     .controls {
       font-size: 30px;
-      width: 300px;
-      height: 200px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      position: relative;
-      top: 30px;
+      position: absolute;
+      top: 0;
     }
     
     .controls .score {
-      margin-bottom: 20px;
+      top: 0;
       flex-basis: 100%;
       text-align: center;
+      color: white;
     }
     
     .controls .timer {
-      width: 65px;
-      font-size: 45px;
-      margin-right: 30px;
+      width: 35px;
+      font-size: 35px;
+      margin-right: 0;
     }
     
     .control-set {
@@ -521,10 +529,10 @@ p {
       display: flex;
       flex-wrap: wrap;
       z-index: 2;
-      position: absolute;
+      position: relative;
       width: 70vw;
       height: 20vw;
-      left: 55%;
+      left: 25%;
     }
     
     .hole {
