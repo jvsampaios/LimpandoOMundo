@@ -455,79 +455,115 @@ p {
     opacity: 1;
   }
   
-  @media screen and (max-width: 1050px) { .game { width: 90vw; } }
   
-  @media screen and (max-width: 780px) {
-    .main-header {
-      height: auto;
+  @media screen and (max-width: 1050px) {
+    
+    .jogoacheoze{
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+    
+    .controls {
+      font-size: 30px;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-    }
-  
-    .title {
-      width: 85px;
-      font-size: 24px;
-      line-height: 1.5;
+      align-items: center;
       position: relative;
       top: 30px;
-      margin-right: 50px;
     }
-  
-    .controls {
-      width: 150px;
-      height: auto;
-      flex-direction: column-reverse;
-    }
-  
-    .control-set {
-      align-items: center;
-    }
-  
-    .controls .score,
-    .controls .timer {
-      font-size: 20px;
-      margin: 0;
-    }
-  
+    
     .controls .score {
-      position: relative;
-      top: 10px;
+      margin-bottom: 20px;
+      flex-basis: 100%;
+      text-align: center;
     }
-  
+    
+    .controls .timer {
+      width: 65px;
+      font-size: 45px;
+      margin-right: 30px;
+    }
+    
+    .control-set {
+      display: flex;
+    }
+    
     .controls button[name='start'] {
-      width: 70px;
-      height: 50px;
-      font-size: 18px;
+      width: 100px;
+      height: 70px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background: #36C3C3;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      line-height: 3;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
-  
+    
+    .controls button[name='start']:hover {
+      background: #20bcbc;
+    }
+    
+    .controls button[name='start']:active {
+      transform: scale(1.1);
+    }
+    
     .game {
-      width: 90vw;
-      height: 70vh;
-    }
-  
-    .hole {
-      height: 45%;
-      position: relative;
-      align-items: center;
-    }
-  
-    .grass {
-      width: 80%;
-      bottom: -10px;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 2;
       position: absolute;
+      width: 70vw;
+      height: 20vw;
+      left: 55%;
+    }
+    
+    .hole {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      width: calc(33,3% - 1vw);
+      height: 150px;
+      position: relative;
+    }
+    
+    .hole img {
+      object-fit: cover;
+    }
+    
+    .grass {
+      margin: auto;
+      z-index: 10;
     }
   
     .grass img {
-      width: 100%;
+      width: auto;
+      height: 100px;
     }
-  
+    
     .mole {
-      width: 80px;
-      position: relative;
-      top: -35px;
+      width: 20vh;
+      opacity: 0;
+      margin: auto;
+      transform: translateY(140px);
+      transition: all .3s ease-in-out;
     }
-  }
-
-
+    
+    .mole.out {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+  }  
 
 
 
