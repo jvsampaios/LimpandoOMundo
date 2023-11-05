@@ -3,12 +3,16 @@
     max-height: 100vh;
 }
 
+.popup{
+    top: 0;
+}
 
 .corfundo {
     background: rgba(10,23,55,0.8);
 }
 
 #fundodomar, #mangue, #cidade, #praia {
+    top: 0;
     z-index: 1;
     height: 80vh;
     width: 100vw;
@@ -20,6 +24,7 @@
 }
 
 #cenario1 {
+    top: 0;
     cursor: grab;
     display: none;
     z-index: 2;
@@ -58,12 +63,6 @@
     z-index: 1;
 }
 
-#botaocredito {
-    position: absolute;
-    top: 0%;
-    left: 85%;
-    z-index: 1;
-}
 
 #lixo1{
     position: absolute;
@@ -289,10 +288,10 @@ p {
 
 .botaovoltar {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 80%;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 }
 
 .insignia {
@@ -353,6 +352,180 @@ p {
     transform: rotateY(180deg);
   }
 
+.jogoacheoze{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 250px;
+  }
+  
+  .controls {
+    font-family: 'Rammetto One', cursive;
+    font-size: 30px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30px;
+  }
+  
+  .controls .score {
+    margin-bottom: 20px;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  
+  .controls .timer {
+    width: 65px;
+    font-size: 45px;
+    margin-right: 30px;
+  }
+  
+  .control-set {
+    display: flex;
+  }
+  
+  .controls button[name='start'] {
+    width: 100px;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #36C3C3;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    line-height: 3;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .controls button[name='start']:hover {
+    background: #20bcbc;
+  }
+  
+  .controls button[name='start']:active {
+    transform: scale(1.1);
+  }
+  
+  .game {
+    width: 750px;
+    width: 70vw;
+    height: 70vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .hole {
+    width: 33%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .hole img {
+    object-fit: contain;
+  }
+  
+  .grass {
+    margin: auto;
+    z-index: 10;
+  }
+  
+  .mole {
+    width: 150px;
+    opacity: 0;
+    margin: auto;
+    transform: translateY(140px);
+    transition: all .3s ease-in-out;
+  }
+  
+  .mole.out {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  @media screen and (max-width: 1050px) { .game { width: 90vw; } }
+  
+  @media screen and (max-width: 780px) {
+    .main-header {
+      height: auto;
+      justify-content: center;
+    }
+  
+    .title {
+      width: 85px;
+      font-size: 24px;
+      line-height: 1.5;
+      position: relative;
+      top: 30px;
+      margin-right: 50px;
+    }
+  
+    .controls {
+      width: 150px;
+      height: auto;
+      flex-direction: column-reverse;
+    }
+  
+    .control-set {
+      align-items: center;
+    }
+  
+    .controls .score,
+    .controls .timer {
+      font-size: 20px;
+      margin: 0;
+    }
+  
+    .controls .score {
+      position: relative;
+      top: 10px;
+    }
+  
+    .controls button[name='start'] {
+      width: 70px;
+      height: 50px;
+      font-size: 18px;
+    }
+  
+    .game {
+      width: 90vw;
+      height: 70vh;
+    }
+  
+    .hole {
+      height: 45%;
+      position: relative;
+      align-items: center;
+    }
+  
+    .grass {
+      width: 80%;
+      bottom: -10px;
+      position: absolute;
+    }
+  
+    .grass img {
+      width: 100%;
+    }
+  
+    .mole {
+      width: 80px;
+      position: relative;
+      top: -35px;
+    }
+  }
 
 
 

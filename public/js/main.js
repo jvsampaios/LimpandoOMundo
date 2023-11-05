@@ -1,4 +1,4 @@
-function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
+function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, p2, passar) {
      inicial.style.display = 'block';
      cenario.style.display = 'none';
      chat.style.display = 'block';
@@ -7,13 +7,12 @@ function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, b
      icone2.style.display = 'none';
      icone3.style.display = 'none';
      botao.style.display = 'block';
-     credito.style.display = 'none';
      p1.style.display = 'none';
      p2.style.display = 'none';
      passar.style.display = 'none';
 }
 
-function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, credito, p1, p2, passar) {
+function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, p2, passar) {
      inicial.style.display = 'none';
      cenario.style.display = 'block';
      chat.style.display = 'none';
@@ -22,7 +21,6 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      icone2.style.display = 'block';
      icone3.style.display = 'block';
      botao.style.display = 'none';
-     credito.style.display = 'block';
      p1.style.display = 'block';
      p2.style.display = 'block';
      passar.style.display = 'block';
@@ -282,4 +280,78 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+
+// Fase acerte o Zé
+
+const start = document.querySelector('.controls button[name="start"]'),
+      moles = document.querySelectorAll('.mole'),
+      scoreBoard = document.querySelector('.controls .score span');
+
+let playTime, interval, lastIndex;
+let score = 0;
+
+function startGame() {
+  playTime = 10;
+  scoreBoard.textContent = 0;
+  score = 0;
+
+  clearInterval(interval);
+  countdown();
+
+  showMole();
+}
+
+function showMole() {
+  let mole = randomMole(moles.length),
+      time = randomTime(500, 1500);
+
+  mole.classList.add('out');
+
+  setTimeout(() => {
+    mole.classList.remove('out');
+
+    if (playTime > 0) showMole();
+  }, time);
+}
+
+function scorePoint() {
+  score++;
+  scoreBoard.textContent = score;
+
+  this.classList.remove('out');
+}
+
+function countdown() {
+  const timer = document.querySelector('.timer');
+
+  interval = setInterval(() => {
+    if (playTime < 0) {
+      clearInterval(interval);
+      return;
+    }
+
+    timer.textContent = playTime;
+    playTime--;
+  }, 1000);
+}
+
+function randomTime(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+function randomMole(molesCount) {
+  let index = Math.floor(Math.random() * molesCount),
+      mole = moles[index];
+
+  if (index === lastIndex) return randomMole(molesCount);
+  lastIndex = index;
+
+  return mole;
+}
+
+start.addEventListener('click', startGame);
+moles.forEach(mole => mole.addEventListener('click', scorePoint));
+
 });
+
+
