@@ -361,12 +361,12 @@ function checkOrientation() {
   if (window.innerHeight > window.innerWidth) {
     // O dispositivo está na orientação retrato (vertical)
     $('#orientation-modal').modal('show');
-
-    // Defina um temporizador para fechar o modal após 3 segundos (ajuste conforme necessário)
+   
+  }
+  else {
     setTimeout(function() {
       $('#orientation-modal').modal('hide');
-    }, 300);
-  }
+    }, 300);  }
 }
 
 // Verifique a orientação inicialmente
