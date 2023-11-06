@@ -39,6 +39,10 @@ $(document).ready(function() {
 // Jogo da Memória
 document.addEventListener("DOMContentLoaded", function() {
 
+  const inscidade = document.getElementById("insigcidade");
+  const inspraia = document.getElementById("insigpraia");
+  const insmangue = document.getElementById("insigmangue");
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
@@ -292,6 +296,7 @@ function abrirModal () {
     $("#texto3").hide();
     $("#texto4").hide();
     $("#texto11").show();
+    inscidade.src = "images/ins1.png";
  }
 }
 // Fim fase 1
@@ -310,6 +315,7 @@ function abrirModal2 () {
      $("#texto5").hide();
      $("#texto6").hide();
      $("#texto12").show();
+     inspraia.src = "images/ins3.png";
   }
 }
 
@@ -319,7 +325,8 @@ function abrirModal3 () {
      $("#texto7").hide();
      $("#texto8").hide();
      $("#texto13").show();
-  
+     insmangue.src = "images/ins2.png";
+
 }
 
 //Passagem dos textos

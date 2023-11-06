@@ -11,13 +11,14 @@ body{
 
 .popup{
     top: 0;
+    position: absolute;
 }
 
 .corfundo {
     background: rgba(10,23,55,0.8);
 }
 
-#fundodomar, #mangue, #cidade, #praia {
+#fundodomar, #mangue, #cidade, #praia {  
     top: 0;
     z-index: 1;
     height: 80vh;
@@ -33,29 +34,7 @@ body{
   top: 81vh;
 }
 
-.insigpraia {
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 10vw;
-  height: auto;
-}
 
-.insigcidade{
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 10vw;
-  height: auto;
-}
-
-.insigmangue{
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 10vw;
-  height: auto;
-}
 
 #chat{
     width: 100vw;
@@ -371,7 +350,7 @@ p {
     position: absolute;
     width: 30vh;
     height: auto;
-    top: 0;
+    top: 1%;
     left: 2%;
     cursor: pointer;
     z-index: 2;
@@ -381,7 +360,7 @@ p {
   position: absolute;
   width: 30vh;
   height: auto;
-  top: 0;
+  top: 1%;
   left: 82%;
   cursor: pointer;
   z-index: 2;
@@ -390,6 +369,7 @@ p {
 .hidden {
   display: none;
 }
+
 
 #insignias{
   width: 18vw;
