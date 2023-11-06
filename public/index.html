@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,8 +38,12 @@
         <div class="row">
             <!--Tela principal-->
             <div class="col-sm-12 col-xs-12 popup">
-                <img src="images/ocean.png" class="img-responsive" id="fundodomar" alt="Responsive image"></p>
-                
+                <img src="images/ocean.png" class="img-responsive" id="fundodomar" alt="Responsive image"></p>  
+            </div>
+            <div id="insignias">
+                <img src="images/inscidade_block.png" class="img-responsive" id="insigcidade" alt="Responsive image">
+                <img src="images/inspraia_block.png" class="img-responsive" id="insigpraia" alt="Responsive image">
+                <img src="images/insmangue_block.png" class="img-responsive" id="insigmangue" alt="Responsive image">
             </div>
         </div>
         <div class="row" id="chat0">
@@ -47,18 +52,46 @@
             <p id="texto2">Você está preparado para se tornar um Guardião dos Mares e Rios? </p>
             <p id="texto9">Você está fazendo um ótimo trabalho para se tornar um Guardião dos Mares e Rios. <br> </p>
             <p id="texto10">Vamos continuar. </p>
-            <img src="images/skip.png" class="img-responsive botao" id="passar" alt="Responsive image">
         </div>
         <!--Cenário Cidade-->
         <div class="row" id="cenario1">
             <div class="col-sm-12 col-xs-12 popup">
                 <img src="images/town.png" class="img-responsive" id="cidade" alt="Responsive image">
-                <img src="images/lixo6.png" class="lixoplastico" id="lixo2">
-                <img src="images/lixo1.PNG" class="lixopapel" id="lixo3">
-                <img src="images/lixo6.png" class="lixoplastico" id="lixo4">
-                <img src="images/lixo1.PNG" class="lixopapel" id="lixo5">
-                <img src="images/papel.png" class="lixeira1 lixeirapapel" id="lixeira1">
-                <img src="images/plastico.png" class="lixeira2 lixeiraplastico" id="lixeira2">
+                <img src="images/lixoplastico1.png" class="lixoplastico" id="lixo1">
+                <img src="images/lixopapel1.PNG" class="lixopapel" id="lixo2">
+                <img src="images/lixoplastico2.png" class="lixoplastico" id="lixo3">
+                <img src="images/lixometal2.PNG" class="lixometal" id="lixo4">
+                <img src="images/lixoorganico2.PNG" class="lixoorganico" id="lixo5">
+                <img src="images/lixoorganico1.PNG" class="lixoorganico" id="lixo6">
+                <img src="images/lixometal1.PNG" class="lixometal" id="lixo7">
+                <img src="images/lixopapel3.PNG" class="lixopapel" id="lixo8">
+                <img src="images/lixovidro2.PNG" class="lixovidro" id="lixo9">
+                <img src="images/lixovidro1.PNG" class="lixovidro" id="lixo10">
+                <img src="images/lixoplastico3.PNG" class="lixoplastico" id="lixo11">
+                <img src="images/lixopapel2.PNG" class="lixopapel" id="lixo12">
+
+
+
+                    <div class="lixeira lixeira1">
+                        <img src="images/papel.png" id="lixeira1">
+                    </div>
+
+                        <div class="lixeira lixeira2">
+                            <img src="images/plastico.png" id="lixeira2">
+                        </div>
+
+                            <div class="lixeira lixeira3">
+                                <img src="images/metal.png" id="lixeira3">
+                            </div>
+
+                                <div class="lixeira lixeira4">
+                                    <img src="images/vidro.png" id="lixeira4">
+                                </div>
+
+                                    <div class="lixeira lixeira5">
+                                        <img src="images/organico.png" id="lixeira5">
+                                    </div>
+
             </div>
         </div>
         <div class="row" id="chat1" style="display: none;">
@@ -67,10 +100,12 @@
             <p id="texto4"> Agora estamos no lado urbano do nosso meio ambiente. </p>
             <p id="texto11">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
             <a
-                href="javascript: fecharCenario (cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue,  voltar1, texto9, texto10, passar);"><img
+                href="javascript: fecharCenario (cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue,  voltar1, texto9, texto10, insignias);"><img
                     src="images/voltar.png" class="img-responsive botaovoltar" id="voltar1" alt="Responsive image"></a>
-            <img src="images/skip.png" class="img-responsive botao" id="passar2" alt="Responsive image">
-        </div>
+                    <button class="reset-arrasta">
+                        <img src="images/reiniciar.png" class="img-responsive botaoreiniciar" id="reiniciar1" alt="Responsive image">
+                      </button>      
+                     </div>
         <!--Cenário Praia-->
         <div class="row" id="cenario2">
             <div class="col-sm-12 col-xs-12 popup">
@@ -139,10 +174,12 @@
             <p id="texto6"> Tá tudo sujo! </p>
             <p id="texto12">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
             <a
-                href="javascript: fecharCenario (cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue,  voltar2, texto9, texto10, passar);">
+                href="javascript: fecharCenario (cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue,  voltar2, texto9, texto10, insignias);">
                 <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar2" alt="Responsive image">
             </a>
-            <img src="images/skip.png" class="img-responsive botao" id="passar3" alt="Responsive image">
+            <button class="reset-memoria">
+                <img src="images/reiniciar.png" class="img-responsive botaoreiniciar" id="reiniciar2" alt="Responsive image">
+              </button>
         </div>
         <!--Cenário Mangue-->
         <div class="row" id="cenario3">
@@ -214,23 +251,24 @@
             <p id="texto8"> É aqui que muitas espécies se reproduzem, como eu! </p>
             <p id="texto13">Continue seguindo sua jornada e saiba como salvar a natureza!</p>
             <a
-                href="javascript: fecharCenario (cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue,  voltar3, texto9, texto10, passar);">
+                href="javascript: fecharCenario (cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue,  voltar3, texto9, texto10, insignias);">
                 <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar3" alt="Responsive image">
             </a>
-            <img src="images/skip.png" class="img-responsive botao" id="passar4" alt="Responsive image">
-        </div>
+            <button class="reset-acerte">
+                <img src="images/reiniciar.png" class="img-responsive botaoreiniciar" id="reiniciar3" alt="Responsive image">
+              </button>       </div>
     </div>
     <!-- Ícones -->
     <div>
         <a
-            href="javascript:abrirCenario(cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue, voltar1, texto1, texto2, passar);"><img
-                src="images/bolhacidade.png" class="img-responsive" id="iconecidade" alt="Responsive image"></a>
+            href="javascript:abrirCenario(cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue, voltar1, texto1, texto2, insignias);"><img
+                src="images/bolhacidade.png" class="img-responsive efeito-flutuante-infinito" id="iconecidade" alt="Responsive image"></a>
         <a
-            href="javascript:abrirCenario(cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue, voltar2, texto1, texto2, passar);"><img
-                src="images/bolhapraia.png" class="img-responsive" id="iconepraia" alt="Responsive image"></a>
+            href="javascript:abrirCenario(cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue, voltar2, texto1, texto2, insignias);"><img
+                src="images/bolhapraia.png" class="img-responsive efeito-flutuante-infinito2" id="iconepraia" alt="Responsive image"></a>
         <a
-            href="javascript:abrirCenario(cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue, voltar3, texto1, texto2, passar);"><img
-                src="images/bolhamangue.png" class="img-responsive" id="iconemangue" alt="Responsive image"></a>
+            href="javascript:abrirCenario(cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue, voltar3, texto1, texto2, insignias);"><img
+                src="images/bolhamangue.png" class="img-responsive efeito-flutuante-infinito3" id="iconemangue" alt="Responsive image"></a>
     </div>
     </div>
     <!--Créditos -->
