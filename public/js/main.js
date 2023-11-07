@@ -12,7 +12,7 @@ function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, b
      insignias.style.display = 'none';
 }
 
-function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, p2, insignias) {
+function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
      inicial.style.display = 'none';
      cenario.style.display = 'block';
      chat.style.display = 'none';
@@ -22,7 +22,6 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      icone3.style.display = 'block';
      botao.style.display = 'none';
      p1.style.display = 'block';
-     p2.style.display = 'block';
      insignias.style.display = 'block';
 }
 
@@ -42,6 +41,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const inscidade = document.getElementById("insigcidade");
   const inspraia = document.getElementById("insigpraia");
   const insmangue = document.getElementById("insigmangue");
+  const ze0 = document.getElementById("personagemchat0");
+  const ze1 = document.getElementById("personagemchat1");
+  const ze2 = document.getElementById("personagemchat2");
+  const ze3 = document.getElementById("personagemchat3");
+  var textocidade = document.getElementById('texto3');
+  var textopraia = document.getElementById('texto5');
+  var textomangue = document.getElementById('texto7');
 
 const cards = document.querySelectorAll('.memory-card');
 
@@ -77,10 +83,12 @@ function disableCards() {
   secondCard.removeEventListener('click', flipCard);
   resetBoard();
   abrirModal2();
+  ze2.src = "images/zefeliz.png";
 }
 
 function unflipCards() {
   lockBoard = true;
+  ze2.src = "images/zetriste.png";
 
   setTimeout(() => {
     firstCard.classList.remove('flip');
@@ -88,6 +96,7 @@ function unflipCards() {
 
     resetBoard();
   }, 1000);
+  
 }
 
 function resetBoard() {
@@ -108,6 +117,8 @@ function resetGame() {
     card.addEventListener('click', flipCard);
   });
   b  = 0;
+  ze2.src = "images/zefeliz.png";
+
   // Embaralhar as cartas novamente
   (function shuffle() {
     cards.forEach(card => {
@@ -125,15 +136,15 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // Fase acerte o Zé
 
-const start = document.querySelector('.controls button[name="start"]'),
+const start = document.querySelector('#reiniciar3'),
       moles = document.querySelectorAll('.mole'),
-      scoreBoard = document.querySelector('.controls .score span');
+      scoreBoard = document.querySelector('.score span');
 
 let playTime, interval, lastIndex;
 let score = 0;
 
 function startGame() {
-  playTime = 10;
+  playTime = 9;
   scoreBoard.textContent = 0;
   score = 0;
 
@@ -291,6 +302,24 @@ $("#lixeira5").droppable({
 var a = 0;
 function abrirModal () { 
  a++;
+ if (a == 1) {
+  textocidade.textContent = "Você acertou o primeiro lixo, continue assim e você conseguirá ajudar a tornar o mundo um lugar mais sustentável!";
+ }
+ if (a == 2) {
+  textocidade.textContent = "Você sabia que reciclar uma tonelada de papel pode salvar a vida de 17 árvores?";
+ }
+ if (a == 4) {
+  textocidade.textContent = "As plantas realizam a fotossíntese, transformando a luz solar em comida. Sem elas, não teríamos ar puro para respirar! Então, nunca arranque as plantas e cuide bem delas!";
+ }
+ if (a == 6) {
+  textocidade.textContent = "Plantar uma árvore é como dar um abraço na Terra. Elas ajudam a absorver o dióxido de carbono e nos fornecem oxigênio.";
+ }
+ if (a == 8) {
+  textocidade.textContent = "As abelhas são verdadeiras super-heroínas do mundo natural, polinizando flores e ajudando a produzir muitos dos alimentos que amamos, como maçãs, morangos e até mesmo chocolate. Por isso, ao ver uma abelha, nunca as mate!";
+ }
+ if (a == 10) {
+  textocidade.textContent = "Reciclar pode ser divertido! Muitos materiais reciclados podem ser transformados em brinquedos legais, como carros feitos de caixas de papelão.";
+ }
  if (a == 12) {
     $("#modalcidade").modal();
     $("#texto3").hide();

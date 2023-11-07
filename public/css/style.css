@@ -25,11 +25,11 @@ body{
     width: 100vw;
 }
 
-#personagemchat{
+.personagemchat, #personagemchat0, #personagemchat1, #personagemchat2, #personagemchat3{
   z-index: 2;
   position: absolute;
   width: auto;
-  height: 18vh;
+  height: 18vh !important;
   left: 5vw;
   top: 81vh;
 }
@@ -37,9 +37,10 @@ body{
 
 
 #chat{
-    width: 100vw;
-    height: 15vh;
+    width: 98vw;
+    height: 18vh;
     z-index: 1;
+    position: relative;
 }
 
 #cenario1 {
@@ -261,7 +262,7 @@ body{
 }
 
 #texto1 {
-    position: absolute;
+  position: absolute;
     top: 85%;
     left: 21%;
 }
@@ -273,7 +274,8 @@ body{
 }
 
 #texto3 {
-    position: absolute;
+  width: 70%;    
+  position: absolute;
     top: 85%;
     left: 21%;
 }
@@ -285,6 +287,7 @@ body{
 }
 
 #texto5 {
+  width: 70%;    
     position: absolute;
     top: 85%;
     left: 21%;
@@ -297,6 +300,7 @@ body{
 }
 
 #texto7 {
+  width: 70%;    
     position: absolute;
     top: 85%;
     left: 21%;
@@ -309,6 +313,7 @@ body{
 }
 
 #texto9 {
+  width: 70%;    
     position: absolute;
     top: 85%;
     left: 21%;
@@ -578,7 +583,21 @@ p {
   
   
   @media screen and (max-width: 1050px) {
-    
+    #fundodomar, #mangue, #cidade, #praia {  
+      top: 0;
+      z-index: 1;
+      height: 80vh;
+      width: 100vw;
+  }
+
+  
+    #chat{
+      width: 110vw;
+      height: 15vh;
+      z-index: 1;
+  }
+  
+
     .jogoacheoze{
       position: absolute;
       top: 0;
@@ -588,63 +607,39 @@ p {
   }
   
     
-    .controls {
-      font-size: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+  
+    .score {
+      font-family: 'Poppins';
       position: absolute;
-      top: 0;
-    }
-    
-    .controls .score {
-      top: 0;
-      flex-basis: 100%;
+      top: 1vh;
+      left: 46vw;
+      font-size: 3vw;
       text-align: center;
       color: white;
     }
     
-    .controls .timer {
-      width: 35px;
-      font-size: 35px;
-      margin-right: 0;
+    .timer {
+      position: relative;
+      font-size: 4vw;
+      margin-top: 8vh;
+      margin-left: 90vw;
+      color: white;
     }
     
     .control-set {
       display: flex;
     }
     
-    .controls button[name='start'] {
-      width: 100px;
-      height: 70px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-      background: #36C3C3;
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 24px;
-      color: #fff;
-      line-height: 3;
-      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    }
-    
-    .controls button[name='start']:hover {
-      background: #20bcbc;
-    }
-    
-    .controls button[name='start']:active {
-      transform: scale(1.1);
-    }
     
     .game {
       display: flex;
       flex-wrap: wrap;
       z-index: 2;
-      position: relative;
+      position: absolute;
+      top: 45%;
       width: 70vw;
       height: 20vw;
-      left: 25%;
+      left: 20%;
     }
     
     .hole {
@@ -667,14 +662,14 @@ p {
   
     .grass img {
       width: auto;
-      height: 100px;
+      height: 90px;
     }
     
     .mole {
-      width: 20vh;
+      width: 16vh;
       opacity: 0;
       margin: auto;
-      transform: translateY(140px);
+      transform: translateY(70px);
       transition: all .3s ease-in-out;
     }
     
