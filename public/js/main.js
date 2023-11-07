@@ -95,7 +95,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1000);
+  }, 1100);
   
 }
 
@@ -182,6 +182,10 @@ function countdown() {
       clearInterval(interval);
       if (score >= 5) {
         abrirModal3();
+      }
+      if (score < 5) {
+        textomangue.textContent = "Não foi dessa vez. Tente novamente!";
+        ze3.src = "images/zetriste.png";
       }
       return;
     }
@@ -326,6 +330,8 @@ function abrirModal () {
     $("#texto4").hide();
     $("#texto11").show();
     inscidade.src = "images/ins1.png";
+    textocidade.textContent = "Parabéns! Vamos para outra região!";
+
  }
 }
 // Fim fase 1
@@ -339,12 +345,25 @@ var c = 0;
 
 function abrirModal2 () { 
   b++;
+  if (b == 1) {
+    textopraia.textContent = "A água é essencial para a vida. Menos de 3% da água na Terra é doce e adequada para beber. É importante economizar água sempre que possível.";
+   }
+   if (b == 2) {
+    textopraia.textContent = "Escovar os dentes com a torneira fechada pode economizar até 11 litros de água por dia.";
+   }
+   if (b == 3) {
+    textopraia.textContent = "A camada de ozônio é como um cobertor que mantém a Terra aquecida, mas a poluição pode torná-lo mais espesso, causando o aquecimento global.";
+   }
+   if (b == 4) {
+    textopraia.textContent = "O plástico nos oceanos pode ser ingerido por animais marinhos, prejudicando-os. Sempre jogue o lixo no local certo!";
+   }
+   if (b == 5) {
+    textopraia.textContent = "A areia da praia não é apenas um lugar para brincar, mas também desempenha um papel na purificação da água e na formação de habitats para pequenos organismos.";
+   }
   if (b == 6) {
      $("#modalpraia").modal();
-     $("#texto5").hide();
-     $("#texto6").hide();
-     $("#texto12").show();
      inspraia.src = "images/ins3.png";
+     textopraia.textContent = "Parabéns, você se tornou um Guardião da Praia, agora vamos para outra região!"
   }
 }
 
@@ -355,6 +374,8 @@ function abrirModal3 () {
      $("#texto8").hide();
      $("#texto13").show();
      insmangue.src = "images/ins2.png";
+     textomangue.textContent = "Parabéns, você se tornou um Guardião do Mangue, obrigado por me ajudar a salvar meu lar!"
+
 
 }
 
@@ -391,65 +412,6 @@ $(function() {
    });
 });
 
-//Texto
-var inicial = ['Para se tornar um Guardião e fazer parte da nossa liga pela preservação do meio-ambiente',
-              'é preciso muita dedicação. Vamos nessa?',
-              'Mas antes, precisamos conversar sobre algo muito importante.',
-              'Nossos rios, mangues e mares estão sujos e poluídos.  Isso é triste!',
-              'Precisamos mudar essa realidade antes que seja tarde demais!',
-              'Você está disposto a me ajudar? ',
-              'Está na hora de colocar as mãos no lixo… Ops! na massa.',
-              'Vamos lá, clique em um ícone e comece a sua jornada…',
-              ] 
-              i = 0;
-
-var cidade = ['Bom, você sabia que grande parte do lixo produzido pelos humanos',
-              'na cidade vai parar no mar? Não?!',
-              'As pessoas precisam ter mais cuidado com o que jogam fora.',
-              'Fique atento! Nunca jogue lixo no “mato” ou nos mares.',
-              'Agora eu te pergunto: você tem ideia da quantidade de lixo',
-              'que os humanos produzem na cidade?',
-              'Cada pessoa produz mais de 1kg de lixo todos os dias.',
-              'Hm… agora multiplique isso pelo número de dias no ano…',
-              'Tem mais lixo do que pessoas na cidade!',
-              'Quanto maior é a cidade, maior é a quantidade de lixo...',
-              'O problema é que as pessoas levam esse lixo para natureza, poluindo o habitat de vários',
-              'animais, principalmente meus amigos que vivem nos mangues e no fundo do mar.',
-              'É o dever de cada cidadão não deixar que ele seja jogado em qualquer lugar. Vamos praticar?',
-              ' ',
-]         
-j = 0;     
-
-var praia = ['Como eu posso aproveitar a praia com tanto lixo assim?!',
-              'Você sabia que esse lixo todo vem da cidade? As pessoas tomam banho de mar',
-              'e deixam o lixo delas na areia.',
-              'Você sabia que o plástico vive mais tempo que as tartarugas? ',
-              'Ele dura para sempre!',
-              'Além das tartarugas, meus amigos caranguejos, peixes e aves também sofrem',
-              'com o plástico na natureza. Precisamos resolver esse problema, né?',
-              'Os humanos precisam parar de fazer coisas de plástico.',
-              'Hm… que tal usar coisas que são feitas da natureza?',
-              'Por isso é muito importante reciclar, você não acha? ',
-              'Acho que é hora do pequeno aventureiro entrar em ação! Vamos limpar tudo!',
-]         
-k = 0;     
-
-var mangue = ['Alguns bichos como o jacaré, a cobra, a tartaruga, a gaivota e o peixe-boi vivem em rios e manguezais.',
-              'Por isso precisamos preservar este ecossistema, pois mais uma vez as pessoas estão poluindo este lugar.',
-              'A grande poluição vem dos esgotos das cidades! ',
-              'Essa esgoto acaba chegando até a correnteza de rios, prejudicando a qualidade da água e a vida de animais. ',
-              'Você sabe como proteger os rios e manguezais? Eu te ajudo!',
-              'Precisamos conscientizar as pessoas !',
-              '1. Não despejar o esgoto em rios !',
-              'A poluição tira o oxigênio da água e matandndo alguns animais, como os peixes.',
-              '2. Não usar agrotóxicos!.',
-              'Essa substância acaba entrando nas correntes de água no solo e matando a vegetação, envenenado plantas e animais.',
-              'O mais importante: não desmatar! ',
-              'O crescimento das cidades acaba destruindo a natureza que está ao redor. ',
-              'Por isso, manter o verde a limpeza dos mares e rios é essencial.',
-              ' Você poderia me ajudar com isso?',
-]         
-m = 0;    
 
 function resetLixeiras() {
   // Restaure as posições originais dos elementos
