@@ -48,6 +48,15 @@ document.addEventListener("DOMContentLoaded", function() {
   var textocidade = document.getElementById('texto3');
   var textopraia = document.getElementById('texto5');
   var textomangue = document.getElementById('texto7');
+  var lixopraia1 = document.getElementById("lixopraia1");
+  var lixopraia2 = document.getElementById("lixopraia2");
+  var lixopraia3 = document.getElementById("lixopraia3");
+  var lixopraia4 = document.getElementById("lixopraia4");
+  var lixopraia5 = document.getElementById("lixopraia5");
+  var lixopraia6 = document.getElementById("lixopraia6");
+  var lixopraia7 = document.getElementById("lixopraia7");
+  var lixopraia8 = document.getElementById("lixopraia8");
+
 
 const cards = document.querySelectorAll('.memory-card');
 
@@ -118,6 +127,16 @@ function resetGame() {
   });
   b  = 0;
   ze2.src = "images/zefeliz.png";
+  textopraia.textContent = "Agora estamos na praia! Um dos meus lugares favoritos… Descubra os pares das cartas pra me ajudar a limpar a praia.";
+  lixopraia1.classList.remove("hidden");
+  lixopraia2.classList.remove("hidden");
+  lixopraia3.classList.remove("hidden");
+  lixopraia4.classList.remove("hidden");
+  lixopraia5.classList.remove("hidden");
+  lixopraia6.classList.remove("hidden");
+  lixopraia7.classList.remove("hidden");
+  lixopraia8.classList.remove("hidden");
+  inspraia.src = "images/inspraia_block.png";
 
   // Embaralhar as cartas novamente
   (function shuffle() {
@@ -345,22 +364,33 @@ var c = 0;
 
 function abrirModal2 () { 
   b++;
+  if (b == 0) {
+    textopraia.textContent = "Agora estamos na praia! Um dos meus lugares favoritos… Descubra os pares das cartas pra me ajudar a limpar a praia.";
+   }
   if (b == 1) {
     textopraia.textContent = "A água é essencial para a vida. Menos de 3% da água na Terra é doce e adequada para beber. É importante economizar água sempre que possível.";
+    lixopraia1.classList.add("hidden");
+    lixopraia2.classList.add("hidden");
    }
    if (b == 2) {
     textopraia.textContent = "Escovar os dentes com a torneira fechada pode economizar até 11 litros de água por dia.";
+    lixopraia3.classList.add("hidden");
    }
    if (b == 3) {
     textopraia.textContent = "A camada de ozônio é como um cobertor que mantém a Terra aquecida, mas a poluição pode torná-lo mais espesso, causando o aquecimento global.";
+    lixopraia4.classList.add("hidden");
    }
    if (b == 4) {
     textopraia.textContent = "O plástico nos oceanos pode ser ingerido por animais marinhos, prejudicando-os. Sempre jogue o lixo no local certo!";
+    lixopraia5.classList.add("hidden");
    }
    if (b == 5) {
     textopraia.textContent = "A areia da praia não é apenas um lugar para brincar, mas também desempenha um papel na purificação da água e na formação de habitats para pequenos organismos.";
+    lixopraia6.classList.add("hidden");
    }
   if (b == 6) {
+    lixopraia7.classList.add("hidden");
+    lixopraia8.classList.add("hidden");
      $("#modalpraia").modal();
      inspraia.src = "images/ins3.png";
      textopraia.textContent = "Parabéns, você se tornou um Guardião da Praia, agora vamos para outra região!"
