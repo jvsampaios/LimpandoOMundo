@@ -37,8 +37,8 @@ body{
 
 
 #chat{
-    width: 98vw;
-    height: 18vh;
+    width: 100vw;
+    height: 20vh;
     z-index: 1;
     position: relative;
 }
@@ -303,17 +303,18 @@ body{
     height: auto;
 }
 
+
 #texto1 {
   position: absolute;
     top: 85%;
     left: 21%;
 }
-
 #texto2 {
     position: absolute;
     top: 90%;
     left: 21%;
 }
+
 
 #texto3 {
   width: 70%;    
@@ -593,7 +594,7 @@ p {
 
   
   
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1400px) {
     #fundodomar, #mangue, #cidade, #praia {  
       top: 0;
       z-index: 1;
@@ -601,11 +602,33 @@ p {
       width: 100vw;
   }
 
-  
+  #chat0, #chat1, #chat2, #chat3 {
+    position: relative;
+    display: inline-block;
+}
+
+#chat0 p, #chat1 p, #chat2 p, #chat3 p {
+    position: absolute;
+    top: 0;
+    left: 23%;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor do fundo do texto */
+    padding: 10px; /* Espaçamento interno do texto */
+}
+
+
     #chat{
-      width: 110vw;
-      height: 15vh;
+      width: 100vw;
+      height: 20vh;
       z-index: 1;
+  }
+
+  .personagemchat, #personagemchat0, #personagemchat1, #personagemchat2, #personagemchat3{
+    z-index: 2;
+    position: absolute;
+    width: auto;
+    height: 18vh !important;
+    left: 5vw;
+    top: 1vh;
   }
   
 
@@ -617,8 +640,27 @@ p {
       flex-wrap: wrap;
   }
   
-    
+  .botaovoltar {
+    position: fixed;
+    width: 30vh;
+    height: auto;
+    top: 1%;
+    left: 2%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.botaoreiniciar {
+  position: fixed;
+  width: 30vh;
+  height: auto;
+  top: 1%;
+  left: 82%;
+  cursor: pointer;
+  z-index: 2;
+}
   
+
     .score {
       font-family: 'Poppins';
       position: absolute;

@@ -1,4 +1,4 @@
-function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, p2, insignias) {
+function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
      inicial.style.display = 'block';
      cenario.style.display = 'none';
      chat.style.display = 'block';
@@ -8,7 +8,6 @@ function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, b
      icone3.style.display = 'none';
      botao.style.display = 'block';
      p1.style.display = 'none';
-     p2.style.display = 'none';
      insignias.style.display = 'none';
 }
 
