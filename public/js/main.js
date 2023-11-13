@@ -1,3 +1,8 @@
+var praia = false;
+var cidade = false;
+var mangue = false;
+
+
 function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
      inicial.style.display = 'block';
      cenario.style.display = 'none';
@@ -9,6 +14,40 @@ function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, b
      botao.style.display = 'block';
      p1.style.display = 'none';
      insignias.style.display = 'none';
+    
+     if (inicial == cenario1 && cidade == false){
+      var videoModal = document.getElementById('videocidade');
+      var meuVideo = document.getElementById('playcidade');
+      setTimeout(function() {
+        videoModal.style.display = 'block';
+        meuVideo.play();
+    }, 100);
+    cidade = true;
+
+  }
+
+  if (inicial == cenario2 && praia == false){
+    var videoModal = document.getElementById('videopraia');
+    var meuVideo = document.getElementById('playpraia');
+    setTimeout(function() {
+      videoModal.style.display = 'block';
+      meuVideo.play();
+  }, 100);
+  praia = true;
+
+}
+
+if (inicial == cenario3 && mangue == false){
+  var videoModal = document.getElementById('videomangue');
+  var meuVideo = document.getElementById('playmangue');
+  setTimeout(function() {
+    videoModal.style.display = 'block';
+    meuVideo.play();
+}, 100);
+mangue = true;
+
+}
+    
 }
 
 function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
@@ -23,6 +62,24 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      p1.style.display = 'block';
      insignias.style.display = 'block';
 }
+
+function fecharModalVideo1() {
+  document.getElementById('videocidade').style.display = 'none';
+  document.getElementById('playcidade').pause();
+
+}
+
+function fecharModalVideo2() {
+  document.getElementById('videopraia').style.display = 'none';
+  document.getElementById('playpraia').pause();
+
+}
+
+function fecharModalVideo3() {
+  document.getElementById('videomangue').style.display = 'none';
+  document.getElementById('playmangue').pause();
+}
+
 
 $(document).ready(function() {
      $("#texto9").hide();
