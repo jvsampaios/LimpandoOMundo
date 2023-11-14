@@ -63,6 +63,7 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      insignias.style.display = 'block';
 }
 
+
 function fecharModalVideo1() {
   document.getElementById('videocidade').style.display = 'none';
   document.getElementById('playcidade').pause();
@@ -113,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var lixopraia7 = document.getElementById("lixopraia7");
   var lixopraia8 = document.getElementById("lixopraia8");
 
+  var praiacompleta = false; // Substitua isso com suas variáveis reais
+  var cidadecompleta = false;
+  var manguecompleto = false;
+
+  
 
 const cards = document.querySelectorAll('.memory-card');
 
@@ -193,7 +199,7 @@ function resetGame() {
   lixopraia7.classList.remove("hidden");
   lixopraia8.classList.remove("hidden");
   inspraia.src = "images/inspraia_block.png";
-
+  manguecompleto = false;
   // Embaralhar as cartas novamente
   (function shuffle() {
     cards.forEach(card => {
@@ -258,9 +264,12 @@ function countdown() {
       if (score >= 5) {
         abrirModal3();
       }
-      if (score < 5) {
+      else {
         textomangue.textContent = "Não foi dessa vez. Tente novamente!";
         ze3.src = "images/zetriste.png";
+        manguecompleto = false;
+        insmangue.src = "images/insmangue_block.png";
+
       }
       return;
     }
@@ -310,14 +319,7 @@ $(document).ready(function() {
 $(".lixoorganico").draggable({containment: "parent", revert: "invalid"});
 } );
 
-// Armazene as posições originais dos elementos em um objeto
-const posicoesOriginais = {};
 
-$(".lixopapel, .lixoplastico, .lixometal, .lixovidro, .lixoorganico").each(function() {
-const id = $(this).attr("id");
-const posicao = $(this).position();
-posicoesOriginais[id] = posicao;
-});
 
 //recolha dos elementos
 $(function() {
@@ -401,11 +403,10 @@ function abrirModal () {
  }
  if (a == 12) {
     $("#modalcidade").modal();
-    $("#texto3").hide();
-    $("#texto4").hide();
-    $("#texto11").show();
+    cidadecompleta = true;
     inscidade.src = "images/ins1.png";
-    textocidade.textContent = "Parabéns! Vamos para outra região!";
+    textocidade.textContent = "Parabéns, você me ajudou a limpar totalmente a cidade! Muito obrigado por isso. Agora, vamos me ajudar a limpar outro lugar?";
+    checarCompleto();
 
  }
 }
@@ -449,72 +450,85 @@ function abrirModal2 () {
     lixopraia8.classList.add("hidden");
      $("#modalpraia").modal();
      inspraia.src = "images/ins3.png";
+     praiacompleta = true;
      textopraia.textContent = "Parabéns, você se tornou um Guardião da Praia, agora vamos para outra região!"
+     checarCompleto();
+
   }
 }
 
 function abrirModal3 () { 
   
-     $("#modalmangue").modal();
-     $("#texto7").hide();
-     $("#texto8").hide();
-     $("#texto13").show();
-     insmangue.src = "images/ins2.png";
-     textomangue.textContent = "Parabéns, você se tornou um Guardião do Mangue, obrigado por me ajudar a salvar meu lar!"
-
+  $("#modalmangue").modal();
+  manguecompleto = true;
+  insmangue.src = "images/ins2.png";
+  textomangue.textContent = "Parabéns, você se tornou um Guardião do Mangue, obrigado por me ajudar a salvar meu lar!"
+  checarCompleto();
 
 }
 
-//Passagem dos textos
-$(function() {
-  $("#passar").click(function () {
-      $("#texto1").text(inicial[i])
-      $("#texto2").text(inicial[i+1])
-      i+=2;
-   });
-});
-
-$(function() {
-  $("#passar2").click(function () {
-      $("#texto3").text(cidade[j])
-      $("#texto4").text(cidade[j+1])
-      j+=2;
-   });
-});
-
-$(function() {
-  $("#passar3").click(function () {
-      $("#texto5").text(cidade[j])
-      $("#texto6").text(cidade[j+1])
-      j+=2;
-   });
-});
-
-$(function() {
-  $("#passar4").click(function () {
-      $("#texto7").text(cidade[m])
-      $("#texto8").text(cidade[m+1])
-      m+=2;
-   });
-});
+function posicaoAleatoria(minX, maxX, minY, maxY) {
+  const randomX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+  const randomY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+  return { top: randomY, left: randomX };
+}
 
 
 function resetLixeiras() {
-  // Restaure as posições originais dos elementos
-  $(".lixopapel, .lixoplastico, .lixometal, .lixovidro, .lixoorganico").each(function() {
-    const id = $(this).attr("id");
-    const posicaoOriginal = posicoesOriginais[id];
+   // Loop através dos lixos e atribua novas posições aleatórias
+   $(".lixopapel, .lixoplastico, .lixometal, .lixovidro, .lixoorganico").each(function () {
+    // Atribua a nova posição ao lixo dentro do intervalo especificado
+    const novaPosicao = posicaoAleatoria(10, 95, 10, 38);
+    
+    // Atribua a nova posição ao lixo
     $(this).css({
-      top: posicaoOriginal.top + "px",
-      left: posicaoOriginal.left + "px",
+      top: novaPosicao.top + "vh",
+      left: novaPosicao.left + "vw",
     });
   });
   $(".lixopapel, .lixoplastico, .lixometal, .lixovidro, .lixoorganico").removeClass("hidden");
+  textocidade.textContent = " Você escolheu a cidade! Arraste o lixo para a lixeira correta.";
+  inscidade.src = "images/inscidade_block.png";
+  cidadecompleta = false;
 }
 
+function abrirModal(idModal) {
+  var modal = document.getElementById(idModal);
+  modal.style.display = 'block';
+}
+
+// Função para fechar o modal
+function fecharModal(idModal) {
+  var modal = document.getElementById(idModal);
+  modal.style.display = 'none';
+}
 // Associar a função de redefinição ao botão
 document.querySelector('.reset-arrasta').addEventListener('click', resetLixeiras);
 
+function abrirParabensModal() {
+  abrirModal('parabensModal');
+}
+
+function fecharModal(idModal) {
+  var modal = document.getElementById(idModal);
+  modal.style.display = 'none';
+}
+
+// Adicione essa função ao botão de fechar ou evento desejado dentro do modal
+document.querySelector('#fecharparabens').addEventListener('click', function() {
+  fecharModal('parabensModal');
+});
+
+
+// Adicione essa função ao botão ou evento desejado
+document.getElementById('parabensimg').addEventListener('click', abrirParabensModal);
+
+function checarCompleto(){
+  if (praiacompleta && cidadecompleta && manguecompleto) {
+    $(".parabens").removeClass("hidden");
+}
+  return;
+}
 
 
 });

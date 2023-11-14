@@ -45,6 +45,9 @@
                 <img src="images/inspraia_block.png" class="img-responsive" id="insigpraia" alt="Responsive image">
                 <img src="images/insmangue_block.png" class="img-responsive" id="insigmangue" alt="Responsive image">
             </div>
+            <div class="parabens">
+                <img src="images/parabens.png" class="img-responsive" id="parabensimg" alt="Responsive image">
+            </div>
         </div>
         <div class="row" id="chat0">
             <img src="images/chating.png" class="img-responsive" id="chat" alt="Responsive image"></p>
@@ -52,6 +55,7 @@
             <p id="texto1"> Bem vindo! <br> 
             Clique em algum dos mundos e se torne um Guardião dos Mares e Rios. </p>
             <p id="texto9">Você está fazendo um ótimo trabalho me ajudando a salvar nosso mundo. Clique em outras fases para se tornar um verdadeiro Guardião!</p>
+
         </div>
         <!--Cenário Cidade-->
         <div class="row" id="cenario1">
@@ -99,6 +103,7 @@
             <img src="images/zefeliz.png" class="personagemchat" id="personagemchat1" alt="Responsive image"></p>
             <p id="texto3"> Você escolheu a cidade! <br>
            Arraste o lixo para a lixeira correta. </p>
+
             <a
                 href="javascript: fecharCenario (cenario1, fundodomar, chat1, chat0, iconecidade, iconepraia, iconemangue, voltar1, texto9, insignias);"><img
                     src="images/voltar.png" class="img-responsive botaovoltar" id="voltar1" alt="Responsive image"></a>
@@ -181,6 +186,7 @@
             <img src="images/zefeliz.png" class="personagemchat" id="personagemchat2" alt="Responsive image"></p>
             <p id="texto5"> Agora estamos na praia! Um dos meus lugares favoritos… <br> 
             Descubra os pares das cartas pra me ajudar a limpar a praia.</p>
+
             <a
                 href="javascript: fecharCenario (cenario2, fundodomar, chat2, chat0, iconecidade, iconepraia, iconemangue,  voltar2, texto9, insignias);">
                 <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar2" alt="Responsive image">
@@ -253,6 +259,7 @@
             <img src="images/zefeliz.png" class="personagemchat" id="personagemchat3" alt="Responsive image"></p>
             <p id="texto7"> Chegamos a minha casa! Bem-vindo ao manguezal. <br> 
            É aqui que muitas espécies se reproduzem, como eu! </p>
+
             <a
                 href="javascript: fecharCenario (cenario3, fundodomar, chat3, chat0, iconecidade, iconepraia, iconemangue,  voltar3, texto9, insignias);">
                 <img src="images/voltar.png" class="img-responsive botaovoltar" id="voltar3" alt="Responsive image">
@@ -331,7 +338,7 @@
         </div>
       </div>
 
-      <!-- HTML do modal de vídeo -->
+      <!-- Modal de vídeos -->
 
       <div class="modalvideo" id="videocidade">
         <div class="modal-content2">
@@ -363,7 +370,17 @@
         </div>
       </div>
         
-      
+     <!-- Modal Parabéns -->
+<div class="modal" id="parabensModal">
+    <div class="modal-content">
+      <span class="close" id="fecharparabens">&times;</span>
+      <div class="modal-text">
+        <p>Meus parabéns! Você completou todas as fases e agora é um guardião da natureza. Obrigado por ajudar a tornar o meu mundo mais limpo. Sempre tente tornar o seu mundo mais limpo também.</p>
+        <button onclick="compartilharCarteirinha()">Compartilhar</button>
+      </div>
+    </div>
+  </div>
+   
 
 </body>
 

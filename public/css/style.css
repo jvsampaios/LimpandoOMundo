@@ -151,6 +151,8 @@ body{
   z-index: 1;
 }
 
+
+
 #lixo1{
     position: absolute;
     top: 40%;
@@ -427,6 +429,28 @@ p {
   left: 2vw;
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.parabens{
+  width: 18vw;
+  height: auto;
+  position: absolute;
+  top: 20vh;
+  left: 2vw;
+  animation: pulse 2s infinite;
+}
+
+.parabens img{
+  width: 16vw;
+}
+
 #insignias img{
   width: 5vw;
 }
@@ -449,6 +473,27 @@ p {
 .modal {
     text-align: center;
 }
+
+.modal-text{
+  text-align: center;
+  padding: 50px;
+}
+
+#parabensModal {
+  display: none; /* Inicialmente, o modal está oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 80%;
+  max-width: 600px; /* Ajuste conforme necessário */
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com opacidade */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
 
 .modalvideo {
   display: none;
