@@ -63,6 +63,11 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      insignias.style.display = 'block';
 }
 
+function fecharModalVideo0() {
+  document.getElementById('videointro').style.display = 'none';
+  document.getElementById('playintro').pause();
+
+}
 
 function fecharModalVideo1() {
   document.getElementById('videocidade').style.display = 'none';
@@ -81,6 +86,24 @@ function fecharModalVideo3() {
   document.getElementById('playmangue').pause();
 }
 
+function fecharAjudaModal0() {
+  document.getElementById('ajudaModal0').style.display = 'none';
+}
+
+function fecharAjudaModal1() {
+  document.getElementById('ajudaModal1').style.display = 'none';
+}
+
+function fecharAjudaModal2() {
+  document.getElementById('ajudaModal2').style.display = 'none';
+}
+
+function fecharAjudaModal3() {
+  document.getElementById('ajudaModal3').style.display = 'none';
+}
+
+
+
 
 $(document).ready(function() {
      $("#texto9").hide();
@@ -89,6 +112,7 @@ $(document).ready(function() {
      $("#texto12").hide();
      $("#texto13").hide();
 });
+
 
 
    
@@ -118,6 +142,12 @@ document.addEventListener("DOMContentLoaded", function() {
   var cidadecompleta = false;
   var manguecompleto = false;
 
+  var intro = false;
+
+  if (intro == false) {
+    abrirModalVideo('videointro');
+    intro=true;
+  }
   
 
 const cards = document.querySelectorAll('.memory-card');
@@ -492,13 +522,13 @@ function resetLixeiras() {
   cidadecompleta = false;
 }
 
-function abrirModal(idModal) {
+function abrirModalVideo(idModal) {
   var modal = document.getElementById(idModal);
   modal.style.display = 'block';
 }
 
 // Função para fechar o modal
-function fecharModal(idModal) {
+function fecharModalVideo(idModal) {
   var modal = document.getElementById(idModal);
   modal.style.display = 'none';
 }
@@ -506,22 +536,59 @@ function fecharModal(idModal) {
 document.querySelector('.reset-arrasta').addEventListener('click', resetLixeiras);
 
 function abrirParabensModal() {
-  abrirModal('parabensModal');
+  abrirModalVideo('parabensModal');
 }
 
-function fecharModal(idModal) {
-  var modal = document.getElementById(idModal);
-  modal.style.display = 'none';
+function abrirAjuda0() {
+  abrirModalVideo('ajudaModal0');
 }
+
+function abrirAjuda1() {
+  abrirModalVideo('ajudaModal1');
+}
+
+function abrirAjuda2() {
+  abrirModalVideo('ajudaModal2');
+}
+
+function abrirAjuda3() {
+  abrirModalVideo('ajudaModal3');
+}
+
+
+document.querySelector('#fecharajuda0').addEventListener('click', function() {
+  fecharModalVideo('ajudaModal0');
+});
+
+document.getElementById('ajuda1').addEventListener('click', abrirAjuda1);
+document.getElementById('ajuda2').addEventListener('click', abrirAjuda2);
+document.getElementById('ajuda3').addEventListener('click', abrirAjuda3);
+
+document.querySelector('#fecharajuda1').addEventListener('click', function() {
+  fecharModalVideo('ajudaModal1');
+});
+
+document.querySelector('#fecharajuda2').addEventListener('click', function() {
+  fecharModalVideo('ajudaModal2');
+});
+
+document.querySelector('#fecharajuda3').addEventListener('click', function() {
+  fecharModalVideo('ajudaModal3');
+});
 
 // Adicione essa função ao botão de fechar ou evento desejado dentro do modal
 document.querySelector('#fecharparabens').addEventListener('click', function() {
-  fecharModal('parabensModal');
+  fecharModalVideo('parabensModal');
 });
 
 
 // Adicione essa função ao botão ou evento desejado
 document.getElementById('parabensimg').addEventListener('click', abrirParabensModal);
+
+document.getElementById('ajuda0').addEventListener('click', abrirAjuda0);
+
+
+
 
 function checarCompleto(){
   if (praiacompleta && cidadecompleta && manguecompleto) {
