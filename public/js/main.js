@@ -560,6 +560,26 @@ document.querySelector('#fecharajuda0').addEventListener('click', function() {
   fecharModalVideo('ajudaModal0');
 });
 
+document.querySelector('#rever0').addEventListener('click', function() {
+  abrirModalVideo('videointro');
+  fecharAjudaModal0();
+});
+
+document.querySelector('#rever1').addEventListener('click', function() {
+  abrirModalVideo('videocidade');
+  fecharAjudaModal1();
+});
+
+document.querySelector('#rever2').addEventListener('click', function() {
+  abrirModalVideo('videopraia');
+  fecharAjudaModal2();
+});
+
+document.querySelector('#rever3').addEventListener('click', function() {
+  abrirModalVideo('videomangue');
+  fecharAjudaModal3();
+});
+
 document.getElementById('ajuda1').addEventListener('click', abrirAjuda1);
 document.getElementById('ajuda2').addEventListener('click', abrirAjuda2);
 document.getElementById('ajuda3').addEventListener('click', abrirAjuda3);

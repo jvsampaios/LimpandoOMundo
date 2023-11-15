@@ -703,6 +703,30 @@ p {
   right: 3vw;
   top: 84vh;
   animation: pulse 4s infinite;
+  cursor: pointer;
+}
+
+#ajudaModal0, #ajudaModal1, #ajudaModal2, #ajudaModal3 {
+  width: 75%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins';
+  z-index: 5;
+}
+
+.rever{
+  position: relative;
+  width: 15vw;
+  top: 3%;
+  left: 42.5%;
+}
+
+.dica{
+  position: relative;
+  height: 60vh;
+  width: auto;
 }
 
   
