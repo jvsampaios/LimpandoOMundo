@@ -25,6 +25,7 @@ h1{
     background: rgba(10,23,55,0.8);
 }
 
+
 #fundodomar, #mangue, #cidade, #praia {  
     top: 0;
     z-index: 1;
@@ -96,11 +97,63 @@ h1{
   height: auto;
 }
 
+#lixointro1{
+  width: 6%;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  z-index: 1;
+}
+
+#lixointro2{
+  width: 4%;
+
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  z-index: 1;
+}
+
+#lixointro3{
+  width: 4%;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 1;
+}
+
+#lixointro4{
+  width: 6%;
+
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  z-index: 1;
+}
+
+#lixointro5{
+  width: 5%;
+
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  z-index: 1;
+}
+
+#lixointro6{
+  width: 4%;
+  position: absolute;
+  top: 40%;
+  left: 85%;
+  z-index: 1;
+}
+
+
 #lixopraia1{
   width: 5%;
   position: absolute;
   top: 40%;
-  left: 30%;
+  left: 70%;
   z-index: 1;
 }
 
@@ -317,11 +370,14 @@ h1{
   position: absolute;
     top: 85%;
     left: 21%;
+    font-size: 1.5vw;
 }
 #texto2 {
     position: absolute;
     top: 90%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 
@@ -330,12 +386,16 @@ h1{
   position: absolute;
     top: 85%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto4 {
     position: absolute;
     top: 90%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto5 {
@@ -343,12 +403,16 @@ h1{
     position: absolute;
     top: 85%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto6 {
     position: absolute;
     top: 90%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto7 {
@@ -356,12 +420,16 @@ h1{
     position: absolute;
     top: 85%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto8 {
     position: absolute;
     top: 90%;
     left: 21%;
+    font-size: 1.5vw;
+
 }
 
 #texto9 {
@@ -370,6 +438,8 @@ h1{
     top: 85%;
     left: 21%;
     display: 'none';
+    font-size: 1.5vw;
+
 }
 
 #texto10 {
@@ -377,6 +447,8 @@ h1{
     top: 90%;
     left: 21%;
     display: 'none';
+    font-size: 1.5vw;
+
 }
 
 #texto11 {
@@ -384,18 +456,24 @@ h1{
     top: 85%;
     left: 21%;
     display: 'none';
+    font-size: 1.5vw;
+
 }
 #texto12 {
     position: absolute;
     top: 85%;
     left: 21%;
     display: 'none';
+    font-size: 1.5vw;
+
 }
 #texto13 {
     position: absolute;
     top: 85%;
     left: 21%;
     display: 'none';
+    font-size: 1.5vw;
+
 }
 
 p {
@@ -422,6 +500,17 @@ p {
   cursor: pointer;
   z-index: 2;
 }
+
+.jogaracerte {
+  position: fixed;
+  width: 30vh;
+  height: auto;
+  top: 70%;
+  left: 2%;
+  cursor: pointer;
+  z-index: 2;
+}
+
 
 .hidden {
   display: none;
@@ -473,8 +562,8 @@ p {
 }
 
 #orientation-modal{
-  width: 90vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .modal {
@@ -640,6 +729,7 @@ p {
     height: 70vh;
     position: absolute;
     top: 45%;
+    left: 20%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -742,14 +832,16 @@ p {
   #chat0, #chat1, #chat2, #chat3 {
     position: relative;
     display: inline-block;
+    width: 90vw;
 }
 
 #chat0 p, #chat1 p, #chat2 p, #chat3 p {
     position: absolute;
     top: 0;
     left: 23%;
-    background-color: rgba(255, 255, 255, 0.8); /* Cor do fundo do texto */
     padding: 10px; /* Espaçamento interno do texto */
+    font-family: 'Poppins';
+    font-size: 4vh;
 }
 
 
@@ -825,8 +917,8 @@ p {
       display: flex;
       flex-wrap: wrap;
       z-index: 2;
-      position: absolute;
-      top: 45%;
+      position: fixed;
+      top: 10%;
       width: 70vw;
       height: 20vw;
       left: 20%;
@@ -894,6 +986,57 @@ p {
     text-align: center;
     font-size: 20px !important;
     color: white;
+  }
+
+  #lixointro1{
+    width: 6%;
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    z-index: 1;
+  }
+  
+  #lixointro2{
+    width: 5%;
+  
+    position: absolute;
+    top: 60%;
+    left: 90%;
+    z-index: 1;
+  }
+  
+  #lixointro3{
+    width: 5%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    z-index: 1;
+  }
+  
+  #lixointro4{
+    width: 8%;
+  
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    z-index: 1;
+  }
+  
+  #lixointro5{
+    width: 6%;
+  
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    z-index: 1;
+  }
+  
+  #lixointro6{
+    width: 6%;
+    position: absolute;
+    top: 40%;
+    left: 90%;
+    z-index: 1;
   }
     
   }  

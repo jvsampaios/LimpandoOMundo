@@ -3,7 +3,7 @@ var cidade = false;
 var mangue = false;
 
 
-function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
+function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias, lixos) {
      inicial.style.display = 'block';
      cenario.style.display = 'none';
      chat.style.display = 'block';
@@ -14,7 +14,8 @@ function abrirCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, b
      botao.style.display = 'block';
      p1.style.display = 'none';
      insignias.style.display = 'none';
-    
+     lixos.style.display = 'none';
+
      if (inicial == cenario1 && cidade == false){
       var videoModal = document.getElementById('videocidade');
       var meuVideo = document.getElementById('playcidade');
@@ -50,7 +51,7 @@ mangue = true;
     
 }
 
-function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias) {
+function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, botao, p1, insignias, lixos) {
      inicial.style.display = 'none';
      cenario.style.display = 'block';
      chat.style.display = 'none';
@@ -61,6 +62,8 @@ function fecharCenario (inicial, cenario, chat, chatog, icone1, icone2, icone3, 
      botao.style.display = 'none';
      p1.style.display = 'block';
      insignias.style.display = 'block';
+     lixos.style.display = 'block';
+
 }
 
 function fecharModalVideo0() {
@@ -119,6 +122,28 @@ $(document).ready(function() {
 // Jogo da Memória
 document.addEventListener("DOMContentLoaded", function() {
 
+  // Função para verificar a orientação do dispositivo
+function checkOrientation() {
+  if (window.innerHeight > window.innerWidth) {
+    // O dispositivo está na orientação retrato (vertical)
+    $('#orientation-modal').modal('show');
+   
+  }
+  else {
+    setTimeout(function() {
+      $('#orientation-modal').modal('hide');
+    }, 300);  }
+}
+
+// Verifique a orientação inicialmente
+checkOrientation();
+
+// Verifique a orientação quando o tamanho da janela for alterado
+$(window).on('resize orientationchange', function() {
+  checkOrientation();
+});
+
+
   const inscidade = document.getElementById("insigcidade");
   const inspraia = document.getElementById("insigpraia");
   const insmangue = document.getElementById("insigmangue");
@@ -137,6 +162,12 @@ document.addEventListener("DOMContentLoaded", function() {
   var lixopraia6 = document.getElementById("lixopraia6");
   var lixopraia7 = document.getElementById("lixopraia7");
   var lixopraia8 = document.getElementById("lixopraia8");
+  var lixointro1 = document.getElementById("lixointro1");
+  var lixointro2 = document.getElementById("lixointro2");
+  var lixointro3 = document.getElementById("lixointro3");
+  var lixointro4 = document.getElementById("lixointro4");
+  var lixointro5 = document.getElementById("lixointro5");
+  var lixointro6 = document.getElementById("lixointro6");
 
   var praiacompleta = false; // Substitua isso com suas variáveis reais
   var cidadecompleta = false;
@@ -247,7 +278,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // Fase acerte o Zé
 
-const start = document.querySelector('#reiniciar3'),
+const start = document.querySelector('#jogaracerte'),
       moles = document.querySelectorAll('.mole'),
       scoreBoard = document.querySelector('.score span');
 
@@ -263,6 +294,10 @@ function startGame() {
   countdown();
 
   showMole();
+  ze3.classList.add("hidden");
+  textomangue.classList.add("hidden");
+
+
 }
 
 function showMole() {
@@ -292,9 +327,14 @@ function countdown() {
     if (playTime < 0) {
       clearInterval(interval);
       if (score >= 5) {
+        ze3.classList.remove("hidden");
+        textomangue.classList.remove("hidden");
+        ze3.src = "images/zefeliz.png";
         abrirModal3();
       }
       else {
+        ze3.classList.remove("hidden");
+        textomangue.classList.remove("hidden");        
         textomangue.textContent = "Não foi dessa vez. Tente novamente!";
         ze3.src = "images/zetriste.png";
         manguecompleto = false;
@@ -306,7 +346,7 @@ function countdown() {
 
     timer.textContent = playTime;
     playTime--;
-  }, 1000);
+  }, 1100);
 }
 
 function randomTime(min, max) {
@@ -437,6 +477,9 @@ function abrirModal () {
     inscidade.src = "images/ins1.png";
     textocidade.textContent = "Parabéns, você me ajudou a limpar totalmente a cidade! Muito obrigado por isso. Agora, vamos me ajudar a limpar outro lugar?";
     checarCompleto();
+    lixointro1.classList.add("hidden");
+    lixointro2.classList.add("hidden");
+
 
  }
 }
@@ -483,6 +526,8 @@ function abrirModal2 () {
      praiacompleta = true;
      textopraia.textContent = "Parabéns, você se tornou um Guardião da Praia, agora vamos para outra região!"
      checarCompleto();
+     lixointro3.classList.add("hidden");
+     lixointro4.classList.add("hidden");
 
   }
 }
@@ -494,6 +539,9 @@ function abrirModal3 () {
   insmangue.src = "images/ins2.png";
   textomangue.textContent = "Parabéns, você se tornou um Guardião do Mangue, obrigado por me ajudar a salvar meu lar!"
   checarCompleto();
+  lixointro5.classList.add("hidden");
+  lixointro6.classList.add("hidden");
+  
 
 }
 
@@ -620,26 +668,6 @@ function checarCompleto(){
 
 });
 
-// Função para verificar a orientação do dispositivo
-function checkOrientation() {
-  if (window.innerHeight > window.innerWidth) {
-    // O dispositivo está na orientação retrato (vertical)
-    $('#orientation-modal').modal('show');
-   
-  }
-  else {
-    setTimeout(function() {
-      $('#orientation-modal').modal('hide');
-    }, 300);  }
-}
-
-// Verifique a orientação inicialmente
-checkOrientation();
-
-// Verifique a orientação quando o tamanho da janela for alterado
-$(window).on('resize orientationchange', function() {
-  checkOrientation();
-});
 
 
 
