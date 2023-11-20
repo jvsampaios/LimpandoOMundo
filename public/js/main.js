@@ -168,6 +168,8 @@ $(window).on('resize orientationchange', function() {
   var lixointro4 = document.getElementById("lixointro4");
   var lixointro5 = document.getElementById("lixointro5");
   var lixointro6 = document.getElementById("lixointro6");
+  var msgparabens = document.getElementById("texto9");
+
 
   var praiacompleta = false; // Substitua isso com suas variáveis reais
   var cidadecompleta = false;
@@ -661,6 +663,7 @@ document.getElementById('ajuda0').addEventListener('click', abrirAjuda0);
 function checarCompleto(){
   if (praiacompleta && cidadecompleta && manguecompleto) {
     $(".parabens").removeClass("hidden");
+    msgparabens.textContent = "Parabéns! Agora você é um Guardião da Natureza, obrigado!"
 }
   return;
 }
