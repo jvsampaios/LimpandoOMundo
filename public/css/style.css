@@ -804,6 +804,13 @@ p {
   transform: translate(-50%, -50%);
   font-family: 'Poppins';
   z-index: 5;
+  font-size: 2vw;
+}
+
+#ajudaModal0 p, #ajudaModal1 p, #ajudaModal2 p, #ajudaModal3 p{
+  margin-left: 5%;
+  margin-right: 5%;
+
 }
 
 .rever{
@@ -1038,6 +1045,19 @@ p {
     left: 90%;
     z-index: 1;
   }
+
+  .ajuda{
+    z-index: 2;
+    position: fixed;
+    width: auto;
+    height: 10vh !important;
+    right: 5vw;
+    top: 84vh;
+    animation: pulse 4s infinite;
+    cursor: pointer;
+  }
+
+ 
     
   }  
 
